@@ -1,9 +1,9 @@
-Name:    podbox
+Name:    modbox
 Version: 1
 Release: 1
-Summary: podbox
+Summary: modbox
 
-Source0: podbox.sh
+Source0: modbox.sh
 
 License: MIT
 
@@ -22,17 +22,17 @@ mkdir -p %{buildroot}/%{_bindir}
 install -p -m 755 %{SOURCE0} %{buildroot}/%{_bindir}
 
 %post
-if [ -f "/usr/bin/podbox" ]; then
- unlink /usr/bin/podbox
+if [ -f "/usr/bin/modbox" ]; then
+ unlink /usr/bin/modbox
 fi
-cp -s /usr/bin/podbox.sh /usr/bin/podbox
+cp -s /usr/bin/modbox.sh /usr/bin/modbox
 
 %preun
-if [ -f "/usr/bin/podbox" ]; then
-  unlink /usr/bin/podbox
+if [ -f "/usr/bin/modbox" ]; then
+  unlink /usr/bin/modbox
 fi
 
 %files
-%{_bindir}/podbox.sh
+%{_bindir}/modbox.sh
 
 %changelog
